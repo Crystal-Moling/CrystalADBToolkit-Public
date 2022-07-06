@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="CrystalADBToolkit.Windows.SubPages.Terminal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CrystalADBToolkit.Windows.SubPages"
+             mc:Ignorable="d"
+             d:DesignHeight="335" d:DesignWidth="610">
+    <Grid x:Name="TerminalGridBase"
+          Background="#DD202020">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="终端"
+                   Grid.Row="0"
+                   FontSize="20"
+                   Foreground="White"/>
+        <Grid Grid.Row="1"
+              Background="White"/>
+        <TextBox Height="280"
+                 Grid.Row="2"
+                 Foreground="White"
+                 IsReadOnly="True"
+                 VerticalAlignment="Top"
+                 x:Name="TerminalTextBox"
+                 VerticalScrollBarVisibility="Auto"/>
+        <Grid Height="25"
+              Grid.Row="2"
+              VerticalAlignment="Bottom">
+            <Grid Height="25"
+                  VerticalAlignment="Top">
+                <TextBlock Width="40"
+                           Text="adb>"
+                           FontSize="15"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           x:Name="CommandMethodNameTextBlock"
+                           PreviewMouseLeftButtonDown="ChangeCommandMethod"/>
+                <TextBox Width="565"
+                         FontSize="13"
+                         Foreground="White"
+                         x:Name="CommandTextBox"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Right"
+                         PreviewKeyDown="GetKeyDown"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

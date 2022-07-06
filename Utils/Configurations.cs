@@ -13,15 +13,10 @@ namespace CrystalADBToolkit.Utils
                 HitokotoType = IF.IniReadValue("Hitokoto", "Type");
                 String hitokotoEnabled = IF.IniReadValue("Hitokoto", "Enabled");
                 if (hitokotoEnabled == "True")
-                {
-                    IsHitokotoEnabled = true;
-                    DataBind.IsHitokotoEnabled = Visibility.Visible;
-                }
-                else if (hitokotoEnabled == "False")
-                {
-                    IsHitokotoEnabled = false;
-                    DataBind.IsHitokotoEnabled = Visibility.Collapsed;
-                }
+                { IsHitokotoEnabled = true; DataBind.IsHitokotoEnabled = Visibility.Visible; }
+                else
+                { IsHitokotoEnabled = false; DataBind.IsHitokotoEnabled = Visibility.Collapsed; }
+                BackgroundFrom = IF.IniReadValue("Background", "From");
             }
             catch (Exception e)
             { Console.WriteLine(e.Message); }
@@ -30,5 +25,6 @@ namespace CrystalADBToolkit.Utils
         public static String HitokotoType { get; set; }
         public static String[] HitokotoJson { get; set; }
         public static String SelectedDeviceId { get; set; }
+        public static String BackgroundFrom { get; set; }
     }
 }

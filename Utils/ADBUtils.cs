@@ -23,7 +23,7 @@ namespace CrystalADBToolkit.Utils
                     String executeCommand;
                     if (deviceId == null)
                     { executeCommand = command; }
-                    else { executeCommand = "-s " + deviceId + command; }
+                    else { executeCommand = " -s " + deviceId + command; }
                     adbForExecute.StartInfo.Arguments = executeCommand;
                     if (writeInLog) LogHelper.WriteLogLine("| ADBUtil | " + deviceId + " | Execute command : adb " + executeCommand, "I");
                 }
@@ -33,7 +33,7 @@ namespace CrystalADBToolkit.Utils
                     String executeCommand;
                     if (deviceId == null)
                     { executeCommand = " shell " + command; }
-                    else { executeCommand = "-s " + deviceId + " shell " + command; }
+                    else { executeCommand = " -s " + deviceId + " shell " + command; }
                     adbForExecute.StartInfo.Arguments = executeCommand;
                     if (writeInLog) LogHelper.WriteLogLine("| ADBUtil | " + deviceId + " | Execute command : adb" + executeCommand, "I");
                 }

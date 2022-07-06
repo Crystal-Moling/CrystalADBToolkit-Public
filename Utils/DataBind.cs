@@ -57,7 +57,7 @@ namespace CrystalADBToolkit.Utils
 
         #endregion
 
-        #region Background
+        #region ImageSource
 
             private static ImageSource _background;
             private static ImageSource _userTile;
@@ -167,7 +167,7 @@ namespace CrystalADBToolkit.Utils
 
         #endregion
 
-        #region Apps
+        #region Packages
 
             private static List<String> _packagesList;
 
@@ -180,6 +180,22 @@ namespace CrystalADBToolkit.Utils
                     StaticPropertyChanged?.Invoke(null, new PropertyChangedEventArgs(nameof(PackagesList)));
                 }
             }
+
+        #endregion
+
+        #region DevicesList
+
+        private static List<String> _devicesList;
+
+        public static List<String> DevicesList
+        {
+            get => _devicesList;
+            set
+            {
+                _devicesList = value;
+                StaticPropertyChanged?.Invoke(null, new PropertyChangedEventArgs(nameof(DevicesList)));
+            }
+        }
 
         #endregion
     }

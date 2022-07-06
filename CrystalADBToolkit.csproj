@@ -63,6 +63,9 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="AsyncClasses\Background.cs" />
+        <Compile Include="AsyncClasses\DevicesList.cs" />
+        <Compile Include="AsyncClasses\Hitokoto.cs" />
         <Compile Include="Utils\ADBUtils.cs" />
         <Compile Include="Utils\AppUtils.cs" />
         <Compile Include="Utils\Configurations.cs" />
@@ -91,6 +94,9 @@
         <Compile Include="Windows\SubPages\ToolsPages\AppsManager.xaml.cs">
           <DependentUpon>AppsManager.xaml</DependentUpon>
         </Compile>
+        <Compile Include="Windows\SubPages\ToolsPages\ScreenConfig.xaml.cs">
+          <DependentUpon>ScreenConfig.xaml</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -111,23 +117,6 @@
         <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
-      <Resource Include="adb\aapt-arm-pie">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <Resource Include="adb\adb.exe">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <Resource Include="adb\AdbWinApi.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <Resource Include="adb\AdbWinUsbApi.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <Resource Include="adb\fastboot.exe">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-    </ItemGroup>
-    <ItemGroup>
       <Page Include="Windows\BaseWindow.xaml" />
       <Page Include="Windows\SubPages\DeviceInfo.xaml" />
       <Page Include="Windows\SubPages\HitokotoInfo.xaml" />
@@ -135,10 +124,10 @@
       <Page Include="Windows\SubPages\Settings.xaml" />
       <Page Include="Windows\SubPages\Terminal.xaml" />
       <Page Include="Windows\SubPages\ToolsPages\AppsManager.xaml" />
+      <Page Include="Windows\SubPages\ToolsPages\ScreenConfig.xaml" />
     </ItemGroup>
     <ItemGroup>
       <Content Include=".gitignore" />
-      <Content Include="README.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Import Project="packages\MaterialDesignThemes.4.6.0-ci191\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.6.0-ci191\build\MaterialDesignThemes.targets')" />
